@@ -1,0 +1,214 @@
+/**index.wxss**/
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.add-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 750rpx;
+}
+
+.add-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.add-sec1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #cfced0;
+  font-size: 30rpx;
+  position: absolute;
+}
+
+.add-icon {
+  margin-bottom: 20rpx;
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.add-sec2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  bottom: 80rpx;
+  width: 100%;
+  height: 100rpx;
+}
+
+.add-sec2 text {
+  color: #cfced0;
+  font-size: 30rpx;
+}
+
+.add-sec2 image {
+  margin-left: 20rpx;
+  width: 200rpx;
+  height: 42rpx;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.tabbar {
+  background-color: #f4f4f4;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 570rpx;
+  height: 105rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  z-index: 24601; /* Les Miserables - Jean Valjean's number of jail; */
+}
+
+.selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10rpx 40rpx;
+}
+
+.tabbar-icon {
+  position: absolute;
+  top: 11rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.tabbar-text {
+  position: absolute;
+  top: 73rpx;
+  font-size: 21rpx;
+  color: #727177;
+}
+
+.preview {
+  background-color: #59c8b1;
+  position: absolute;
+  bottom: 0;
+  left: 570rpx;
+  width: 180rpx;
+  height: 105rpx;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 204599;
+}
+
+.preview-text {
+  position: relative;
+  left: 15rpx;
+  height: 180rpx;
+  line-height: 180rpx;
+  font-weight: bold;
+  font-size: 28rpx;
+}
+
+.preview-icon {
+  position: relative;
+  left: 15rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.background-wrapper, .sticker-wrapper {
+  background-color: #f4f4f4;
+  position: absolute;
+  bottom: 0;
+  width: 750rpx;
+  height: 310rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 24600;
+}
+
+.background-scroll-view {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  color: #808085;
+  width: 100%;
+}
+
+.background-icon {
+  width: 100rpx;
+  height: 148rpx;
+  margin: 30rpx 20rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-shadow: 2rpx 2rpx 8rpx #828183;
+  white-space: nowrap;
+}
+
+@keyframes tabbar-open {
+  from {
+    bottom: -305rpx;
+  }
+
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes tabbar-close {
+  from {
+    bottom: 0;
+  }
+
+  to {
+    bottom: -305rpx;
+  }
+}
+
+.stickername-scroll-view {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  color: #808085;
+}
+
+.stickername {
+  display: inline-block;
+  width: 150rpx;
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.stickerimgs-scroll-view {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+}
+
+.sticker {
+  display: inline-block;
+  width: 120rpx;
+  height: 120rpx;
+  margin: 10rpx 20rpx;
+  box-shadow: 2rpx 2rpx 8rpx #828183;
+  background-color: #fff;
+}

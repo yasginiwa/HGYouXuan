@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "sticker": "/components/sticker/sticker",
+    "inputBox": "/components/inputBox/inputBox"
+  },
+  "navigationBarTitleText": "皇冠优选",
+  "disableScroll": true
+}

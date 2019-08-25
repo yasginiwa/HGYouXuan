@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<view class="flex-container">
+  <inputBox title="这一刻的想法..." multiline="true" bindinputCancel="onInputCancel" bindinputConfirm="onInputConfirm" wx:if="{{addingText}}" />
+
+  <view class="main">
+    <view class="add-content" style="height: {{addContentHeight}}rpx;" bindtap="onRefreshView">
+
+      <view class="add-description" wx-if="{{assemblies.length == 0 && backgroundSelectedIndex.length == 0}}">
+
+        <view class="add-sec1" style="bottom: {{windowBottom}}rpx;">
+          <image class="add-icon" src="../../assets/add-icon.png"></image>
+          <text class="add-title">点击下方按钮添加元素</text>
+        </view>
+
+        <view class="add-sec2">
+          <text>Powered by</text>
+          <image src="../../assets/logo.png"></image>
+        </view>
+
+      </view>
+
+      <image class="background" src="http://192.168.0.172:3000/{{backgroundList[backgroundSelectedIndex]}}" mode="aspectFill"></image>
+      <sticker id='{{ item.id }}' component_type='{{ item.component_type }}' selected='{{ selected }}' hidden='{{ hidden }}' border='{{ border }}' image_url='{{ item.image_url }}' text='{{ item.text }}' stickerCenterX='{{ item.stickerCenterX }}' stickerCenterY='{{ item.stickerCenterY }}'
+        scale='{{ item.scale }}' rotate='{{ item.rotate }}' z_index='{{ item.z_index }}' max_z_index='{{ max_z_index }}' bindrefreshData='onRefreshData' bindrefreshView='onRefreshView' bindremoveSticker='onRemoveComponent' bindupdateMax_z_index='onUpdateMax_z_index'
+        wx:key='{{ item.id }}' wx:for='{{ assemblies }}' />
+
+    </view>
+  </view>
+
+  <view class="tabbar">
+    <view class="selector" bindtap="onBackgroundTabTap">
+      <image class="tabbar-icon" src="../../assets/background.png"></image>
+      <text class="tabbar-text">背景</text>
+    </view>
+    <view class="selector" bindtap="onStickerTabTap">
+      <image class="tabbar-icon" src="../../assets/sticker.png"></image>
+      <text class="tabbar-text">贴纸</text>
+    </view>
+    <view class="selector" bindtap="onTextTabTap">
+      <image class="tabbar-icon" src="../../assets/text.png"></image>
+      <text class="tabbar-text">文字</text>
+    </view>
+    <view class="selector" bindtap="onImageTabTap">
+      <image class="tabbar-icon" src="../../assets/image.png"></image>
+      <text class="tabbar-text">图片</text>
+    </view>
+  </view>
+
+  <view class="preview" bindtap="onPreviewTap">
+    <text class="preview-text">预览</text>
+    <image class="preview-icon" src="../../assets/forward.png"></image>
+  </view>
+
+  <view class="background-wrapper" style="animation: {{backgroundAnim}} 0.3s; bottom: {{backgroundBot}}" wx:if="{{backgroundDidOpen}}">
+    <scroll-view class="background-scroll-view" scroll-x scroll-top="10">
+      <image class="background-icon" src="http://192.168.0.172:3000/{{item}}" wx:for="{{backgroundList}}" wx:key="background" bindtap="onSelectBackground" data-bgindex="{{index}}"></image>
+    </scroll-view>
+  </view>
+
+  <view class="sticker-wrapper" style="animation: {{stickerAnim}} 0.3s; bottom: {{stickerBot}}" wx:if="{{stickerDidOpen}}" wx:if="{{stickerDidOpen}}">
+    <scroll-view class="stickername-scroll-view" scroll-x>
+      <view class="stickername" wx:for="{{patternList}}" wx:key="patternname" data-patterntype="{{index}}" style="color: {{item.color}};" bindtap="onPatternTypeSelect">{{item.name}}</view>
+    </scroll-view>
+
+    <scroll-view class="stickerimgs-scroll-view" scroll-x bindtap="">
+      <image class="sticker" mode="aspectFit" wx:for="{{patternList[patternTypeIndex].imgs}}" wx:key="patternimg" src="http://192.168.0.172:3000/sticker/{{item}}" bindtap="onStickerSelect" data-stickerindex="{{index}}"></image>
+    </scroll-view>
+  </view>
+
+</view>
