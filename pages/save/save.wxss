@@ -29,20 +29,26 @@
   height: 1112px;
 }
 
+.logo {
+  position: absolute;
+  top: 915rpx;
+  width: 120rpx;
+  height: 121rpx;
+}
+
 .process-photo {
   width: 100%;
   display: flex;
-  justify-content: space-around;
   position: absolute;
-  bottom: 150rpx;
+  bottom: 40rpx;
 }
 
-/* .save-to-album {
-  position: absolute;
-  bottom: 150rpx;
-  text-align: center;
+.save-to-album {
+  position: relative;
+  left: 30rpx;
 }
 
 .share {
-
-} */
+  position: relative;
+  right: 30rpx;
+}

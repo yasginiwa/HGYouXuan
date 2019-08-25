@@ -139,8 +139,6 @@ Page({
     this.setData({
       stickerSelectedIndex: e.currentTarget.dataset.stickerindex
     })
-    console.log(this.data.patternTypeIndex)
-    console.log(this.data.stickerSelectedIndex)
 
     this.data.assemblies.push({
       id: Math.random().toString(36).substr(2, 4), // 随机生成4位id
@@ -348,9 +346,20 @@ Page({
 
   // 预览
   onPreviewTap() {
+
+    // 取消所有组件选择
+    this.onRefreshView();
+
+    // 页面数据传递
+    let data = {
+      backgroundPath: `${config.host}/${this.data.backgroundList[this.data.backgroundSelectedIndex]}`,
+      assemblies: this.data.assemblies
+    }
+
+
     if (this.data.assemblies.length) {
       wx.navigateTo({
-        url: '../save/save'
+        url: '../save/save?data=' + JSON.stringify(data)
       })
     } else {
       wx.showToast({

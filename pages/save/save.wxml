@@ -4,6 +4,7 @@
   <view class='signature'>Designed by
     <open-data type='userNickName' />
   </view>
+  <image class='logo' src='/assets/logo.png' />
   <canvas class="preview_canvas" canvas-id="preview_canvas" />
   <view class="process-photo">
     <button class='save-to-album' type='primary' bindtap='onSaveToAlbum'>保存到相册</button>

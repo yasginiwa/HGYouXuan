@@ -11,12 +11,7 @@
           <image class="add-icon" src="../../assets/add-icon.png"></image>
           <text class="add-title">点击下方按钮添加元素</text>
         </view>
-
-        <view class="add-sec2">
-          <text>Powered by</text>
-          <image src="../../assets/logo.png"></image>
-        </view>
-
+        
       </view>
 
       <image class="background" src="http://192.168.0.172:3000/{{backgroundList[backgroundSelectedIndex]}}" mode="aspectFill"></image>

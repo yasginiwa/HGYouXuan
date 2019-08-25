@@ -6,7 +6,8 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+      "navigationBarTitleText": "皇冠优选"
   },
   "sitemapLocation": "sitemap.json"
 }

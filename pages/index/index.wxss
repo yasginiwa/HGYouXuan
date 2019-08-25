@@ -39,27 +39,6 @@
   height: 300rpx;
 }
 
-.add-sec2 {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  position: absolute;
-  bottom: 80rpx;
-  width: 100%;
-  height: 100rpx;
-}
-
-.add-sec2 text {
-  color: #cfced0;
-  font-size: 30rpx;
-}
-
-.add-sec2 image {
-  margin-left: 20rpx;
-  width: 200rpx;
-  height: 42rpx;
-}
-
 .background {
   width: 100%;
   height: 100%;
