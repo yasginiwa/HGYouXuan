@@ -14,7 +14,7 @@
         
       </view>
 
-      <image class="background" src="http://192.168.0.172:3000/{{backgroundList[backgroundSelectedIndex]}}" mode="aspectFill"></image>
+      <image class="background" src="https://youxuan.hgsp.cn:3000/{{backgroundList[backgroundSelectedIndex]}}" mode="aspectFill"></image>
       <sticker id='{{ item.id }}' component_type='{{ item.component_type }}' selected='{{ selected }}' hidden='{{ hidden }}' border='{{ border }}' image_url='{{ item.image_url }}' text='{{ item.text }}' stickerCenterX='{{ item.stickerCenterX }}' stickerCenterY='{{ item.stickerCenterY }}'
         scale='{{ item.scale }}' rotate='{{ item.rotate }}' z_index='{{ item.z_index }}' max_z_index='{{ max_z_index }}' bindrefreshData='onRefreshData' bindrefreshView='onRefreshView' bindremoveSticker='onRemoveComponent' bindupdateMax_z_index='onUpdateMax_z_index'
         wx:key='{{ item.id }}' wx:for='{{ assemblies }}' />
@@ -47,8 +47,8 @@
   </view>
 
   <view class="background-wrapper" style="animation: {{backgroundAnim}} 0.3s; bottom: {{backgroundBot}}" wx:if="{{backgroundDidOpen}}">
-    <scroll-view class="background-scroll-view" scroll-x scroll-top="10">
-      <image class="background-icon" src="http://192.168.0.172:3000/{{item}}" wx:for="{{backgroundList}}" wx:key="background" bindtap="onSelectBackground" data-bgindex="{{index}}"></image>
+    <scroll-view class="background-scroll-view" scroll-x scroll-top="10" enable-flex>
+      <image class="background-icon" src="https://youxuan.hgsp.cn:3000/{{item}}" wx:for="{{backgroundList}}" wx:key="background" bindtap="onSelectBackground" data-bgindex="{{index}}"></image>
     </scroll-view>
   </view>
 
@@ -58,7 +58,7 @@
     </scroll-view>
 
     <scroll-view class="stickerimgs-scroll-view" scroll-x bindtap="">
-      <image class="sticker" mode="aspectFit" wx:for="{{patternList[patternTypeIndex].imgs}}" wx:key="patternimg" src="http://192.168.0.172:3000/sticker/{{item}}" bindtap="onStickerSelect" data-stickerindex="{{index}}"></image>
+      <image class="sticker" mode="aspectFit" wx:for="{{patternList[patternTypeIndex].imgs}}" wx:key="patternimg" src="https://youxuan.hgsp.cn:3000/sticker/{{item}}" bindtap="onStickerSelect" data-stickerindex="{{index}}"></image>
     </scroll-view>
   </view>
 

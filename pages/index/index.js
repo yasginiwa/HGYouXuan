@@ -54,7 +54,6 @@ Page({
     wx.request({
       url: config.backgroundList,
       success: (res) => {
-
         this.setData({
           backgroundList: res.data
         })

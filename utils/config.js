@@ -1,4 +1,4 @@
-const host = 'http://192.168.0.172:3000',
+const host = 'https://youxuan.hgsp.cn:3000',
   backgroundList = `${host}/backgroundlist`,
   patternList = `${host}/patternlist`;
 
