@@ -120,7 +120,8 @@ Page({
 
   },
 
-  downloadToTempFile(url) {
+  // 下载图片
+  downloadFile(url) {
     return new Promise((resolve, reject) => {
       wx.downloadFile({
         url: url,
@@ -129,6 +130,14 @@ Page({
         }
       })
     })
+  },
+
+
+  // 下载所有贴纸图片
+  downloadAllSticker(stickerUrls) {
+    return Promise.all(stickerUrls.map((val) => {
+      return this.downloadFile(val.url)
+    }));
   },
 
   /**
@@ -141,33 +150,55 @@ Page({
 
     options = JSON.parse(options.data);
 
-      this.downloadToTempFile(options.backgroundPath)
-        .then((data) => {
+    let stickerUrls = [];
 
-          options.backgroundPath = data;
-
-          options.assemblies.forEach((cmp, idx) => {
-            wx.downloadFile({
-              url: cmp.image_url,
-              success: (res) => {
-                options.assemblies[idx].image_url = res.tempFilePath;
-              }
-            })
-          })
-          return new Promise((resolve, reject) => {
-            resolve(options)
-          })
+    for (let i = 0; i < options.assemblies.length; i++) {
+      if (options.assemblies[i].component_type == 'sticker') {
+        stickerUrls.push({
+          'sindex': i,
+          'url': options.assemblies[i].image_url
         })
-        .then((options) => {
-          console.log(options);
+      }
+    }
+
+    console.log(stickerUrls);
+
+    this.downloadAllSticker(stickerUrls)
+      .then((data) => {
+        stickerUrls.map((val, index) => {
+          stickerUrls[index].url = data[index]
         })
-        
 
-    // this.setData({
-    //   backgroundPath: options.backgroundPath,
-    //   assemblies: options.assemblies
-    // })
 
-    this.draw();
+
+        options.assemblies.map((assembly, index) => {
+
+          for (let i = 0; i < stickerUrls.length; i++) {
+            if (stickerUrls[i].sindex == index) {
+              assembly.image_url = stickerUrls[i].url
+            }
+          }
+        })
+
+        console.log(options.assemblies);
+
+        new Promise((resolve, reject) => {
+          resolve(options);
+        })
+      })
+      .then((data) => {
+        return this.downloadFile(options.backgroundPath)
+      })
+      .then((data) => {
+        options.backgroundPath = data;
+
+        this.setData({
+          backgroundPath: options.backgroundPath,
+          assemblies: options.assemblies
+        })
+
+        this.draw();
+      })
+
   }
 })

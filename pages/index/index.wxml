@@ -52,7 +52,7 @@
     </scroll-view>
   </view>
 
-  <view class="sticker-wrapper" style="animation: {{stickerAnim}} 0.3s; bottom: {{stickerBot}}" wx:if="{{stickerDidOpen}}" wx:if="{{stickerDidOpen}}">
+  <view class="sticker-wrapper" style="animation: {{stickerAnim}} 0.3s; bottom: {{stickerBot}}" wx:if="{{stickerDidOpen}}">
     <scroll-view class="stickername-scroll-view" scroll-x>
       <view class="stickername" wx:for="{{patternList}}" wx:key="patternname" data-patterntype="{{index}}" style="color: {{item.color}};" bindtap="onPatternTypeSelect">{{item.name}}</view>
     </scroll-view>
