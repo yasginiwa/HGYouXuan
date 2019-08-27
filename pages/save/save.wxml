@@ -8,7 +8,7 @@
   <canvas class="preview_canvas" canvas-id="preview_canvas" />
   <view class="process-photo">
     <button class='save-to-album' type='primary' bindtap='onSaveToAlbum'>保存到相册</button>
-    <button class="share" type="primary" bindtap="onShare">分享给朋友</button>
+    <button class="share" type="primary" open-type="share" bindtap="onShare">分享给朋友</button>
   </view>
   
 </view>

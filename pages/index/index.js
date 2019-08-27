@@ -355,8 +355,9 @@ Page({
       assemblies: this.data.assemblies
     }
 
+    console.log(this.data.backgroundSelectedIndex);
 
-    if (this.data.assemblies.length) {
+    if (this.data.assemblies.length && this.data.backgroundList.length) {
       wx.navigateTo({
         url: '../save/save?data=' + JSON.stringify(data)
       })

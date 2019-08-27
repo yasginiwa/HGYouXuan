@@ -161,15 +161,11 @@ Page({
       }
     }
 
-    console.log(stickerUrls);
-
     this.downloadAllSticker(stickerUrls)
       .then((data) => {
         stickerUrls.map((val, index) => {
           stickerUrls[index].url = data[index]
         })
-
-
 
         options.assemblies.map((assembly, index) => {
 
@@ -179,8 +175,6 @@ Page({
             }
           }
         })
-
-        console.log(options.assemblies);
 
         new Promise((resolve, reject) => {
           resolve(options);
@@ -200,5 +194,13 @@ Page({
         this.draw();
       })
 
+  },
+
+  onShareAppMessage: function() {
+    return {
+      title: '@我 来制作属于自己的优选照片吧',
+      path: 'pages/index/index',
+      imageUrl: this.data.previewImagePath
+    }
   }
 })

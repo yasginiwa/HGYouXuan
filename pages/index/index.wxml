@@ -14,7 +14,7 @@
         
       </view>
 
-      <image class="background" src="https://youxuan.hgsp.cn:3000/{{backgroundList[backgroundSelectedIndex]}}" mode="aspectFill"></image>
+      <image class="background" src="https://youxuan.hgsp.cn:3000/{{backgroundList[backgroundSelectedIndex]}}" mode="aspectFill" wx:if="{{backgroundList.length}}"></image>
       <sticker id='{{ item.id }}' component_type='{{ item.component_type }}' selected='{{ selected }}' hidden='{{ hidden }}' border='{{ border }}' image_url='{{ item.image_url }}' text='{{ item.text }}' stickerCenterX='{{ item.stickerCenterX }}' stickerCenterY='{{ item.stickerCenterY }}'
         scale='{{ item.scale }}' rotate='{{ item.rotate }}' z_index='{{ item.z_index }}' max_z_index='{{ max_z_index }}' bindrefreshData='onRefreshData' bindrefreshView='onRefreshView' bindremoveSticker='onRemoveComponent' bindupdateMax_z_index='onUpdateMax_z_index'
         wx:key='{{ item.id }}' wx:for='{{ assemblies }}' />
@@ -37,7 +37,7 @@
     </view>
     <view class="selector" bindtap="onImageTabTap">
       <image class="tabbar-icon" src="../../assets/image.png"></image>
-      <text class="tabbar-text">图片</text>
+      <text class="tabbar-text">拍照</text>
     </view>
   </view>
 
