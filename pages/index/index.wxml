@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="flex-container">
-  <inputBox title="这一刻的想法..." multiline="true" bindinputCancel="onInputCancel" bindinputConfirm="onInputConfirm" wx:if="{{addingText}}" />
+  <inputBox title="这一刻的心情..." multiline="true" bindinputCancel="onInputCancel" bindinputConfirm="onInputConfirm" wx:if="{{addingText}}" />
 
   <view class="main">
     <view class="add-content" style="height: {{addContentHeight}}rpx;" bindtap="onRefreshView">
@@ -47,7 +47,7 @@
   </view>
 
   <view class="background-wrapper" style="animation: {{backgroundAnim}} 0.3s; bottom: {{backgroundBot}}" wx:if="{{backgroundDidOpen}}">
-    <scroll-view class="background-scroll-view" scroll-x scroll-top="10" enable-flex>
+    <scroll-view class="background-scroll-view" scroll-x>
       <image class="background-icon" src="https://youxuan.hgsp.cn:3000/{{item}}" wx:for="{{backgroundList}}" wx:key="background" bindtap="onSelectBackground" data-bgindex="{{index}}"></image>
     </scroll-view>
   </view>

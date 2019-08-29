@@ -116,9 +116,6 @@
   bottom: 0;
   width: 750rpx;
   height: 310rpx;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
   z-index: 24600;
 }
 
@@ -127,10 +124,10 @@
   flex-direction: row;
   white-space: nowrap;
   color: #808085;
-  width: 100%;
 }
 
 .background-icon {
+  display: inline-block;
   width: 100rpx;
   height: 148rpx;
   margin: 30rpx 20rpx;
